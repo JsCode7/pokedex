@@ -1,0 +1,10 @@
+---
+import Search from './Search';
+
+const data = await fetch(import.meta.env.POKEMON_API).then(
+  (res) => res.json()
+);
+const pokemonList = data.results;
+---
+<Search client:load searchList={pokemonList}>
+</Search>

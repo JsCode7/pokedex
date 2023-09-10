@@ -1,13 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import Button from "../components/Button.astro";
+import Card from "../components/PokeCard.astro";
+import SearchBar from './../components/SearchBar.astro';
 
 interface Pokemon {
   name: string;
 }
-
-const data = await fetch("https://pokeapi.co/api/v2/pokemon?limit=21").then(
+const data = await fetch(import.meta.env.POKEMON_API).then(
   (res) => res.json()
 );
 const pokemonList = data.results;
@@ -31,22 +30,10 @@ const pokemonList = data.results;
         fill="url(#paint0_linear_1805_24383)"></path>
     </svg>
     <h1>Bievenido a mi <span class="text-gradient">Pókedex</span></h1>
-    <div>
-      <input
-        class="w-full rounded-full h-10 pl-4 text-gray-500"
-        type="text"
-        name="search"
-        placeholder="Busca por nombre o número"
-      />
-      <Button type="search" />
+    <div class="flex">
+      <SearchBar />
     </div>
-    <div class="grid grid-cols-3 gap-2 my-8">
-      {
-        pokemonList.map((pokemon: Pokemon, index: number) => (
-          <Card name={pokemon.name} id={index + 1} />
-        ))
-      }
-    </div>
+    
   </main>
 </Layout>
 
