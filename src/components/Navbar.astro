@@ -1,0 +1,16 @@
+---
+import { Image } from 'astro:assets';
+import pokeball from '../images/pokeball.png';
+---
+<nav class="flex justify-between mt-4 mb-8">
+    <div class="flex">
+        <a class="flex" href="/">
+            <Image src={pokeball} alt='pokeball-logo' width={50}/>
+            <span class="flex items-center text-white font-bold">Pókedex</span>
+        </a>
+    </div>
+    <div class="flex items-center space-x-4 mr-8">
+        <span class="text-white"><a href="/">Inicio</a></span>
+        <span class="text-white"><a href="/about">Acerca</a></span>
+    </div>
+</nav>
