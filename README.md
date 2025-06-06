@@ -2,7 +2,7 @@
 
 > 🚀 **First app with astro**
 > 
-![alt text](https://media.discordapp.net/attachments/1149139979935690822/1150231625087582328/image.png?width=753&height=676)
+![Captura de la aplicación Pókedex](https://media.discordapp.net/attachments/1149139979935690822/1150231625087582328/image.png?width=753&height=676)
 
 ## 🧞 Commands
 
