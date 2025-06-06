@@ -64,17 +64,17 @@ function Search({ searchList }) {
 
       {query.length > 1 && (
         <div className="my-4">
-          Has encontrado {query.length}{" "}
-          {query.length === 1 ? "pokemon" : "pokemons"} para '{query}'
+          Has encontrado {pokemons.length}{" "}
+          {pokemons.length === 1 ? "pokemon" : "pokemons"} para '{query}'
         </div>
       )}
 
 	  {query.length < 1 && (
 		<div class="grid grid-cols-3 gap-2 my-8">
 		{
-		  searchList.map((pokemon, index) => (
-			<Card name={pokemon.name} id={index + 1} />
-		  ))
+                  searchList.map((pokemon, index) => (
+                        <Card key={pokemon.name} name={pokemon.name} id={index + 1} />
+                  ))
 		}
 	  </div>
 	  )}
